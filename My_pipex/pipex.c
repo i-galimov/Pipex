@@ -62,7 +62,7 @@ void	ft_child_process(char **argv, char **env, int *fd)
 		write(2, "\n", 1);
 		exit(1);
 	}
-	if (acces(argv[1], R_OK) != 0)
+	if (access(argv[1], R_OK) != 0)
 	{
 		write(2, "Permission denied error", 23);
 		write(2, argv[1], ft_strlen(argv[1]));
