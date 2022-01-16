@@ -46,7 +46,7 @@ void	ft_parent_process(char **argv, char **env, int *fd)
 	fd_out = open(argv[4], O_WRONLY | O_CREAT | O_TRUNC, 0777);
 	if (fd_out == -1)
 	{
-		write(2, "Permission denied error", 23);
+		write(2, "Permission denied error: ", 25);
 		write(2, argv[4], ft_strlen(argv[4]));
 		write(2, "\n", 1);
 		exit(1);
@@ -61,7 +61,7 @@ void	ft_child_process(char **argv, char **env, int *fd)
 {
 	if (access(argv[1], F_OK) != 0)
 	{
-		write(2, "No such file or directory error", 31);
+		write(2, "No such file or directory error: ", 33);
 		write(2, argv[1], ft_strlen(argv[1]));
 		write(2, "\n", 1);
 		exit(1);
